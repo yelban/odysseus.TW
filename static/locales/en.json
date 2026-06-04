@@ -425,5 +425,18 @@
     "weeksAgo": "{count} weeks ago",
     "monthsAgo": "{count} months ago",
     "yearsAgo": "{count} years ago"
+  },
+  "ui": {
+    "research": "Research",
+    "archive": "Archive",
+    "select": "Select",
+    "recent": "Recent",
+    "attach_files": "Attach files",
+    "prompt": "Prompt",
+    "photos": "Photos",
+    "albums": "Albums",
+    "all_sources": "All sources",
+    "random": "Random",
+    "shell_access": "Shell Access"
   }
 }

@@ -7,7 +7,7 @@
  */
 
 const I18N = {
-  currentLang: localStorage.getItem('odysseus-lang') || 'zh',
+  currentLang: localStorage.getItem('odysseus-lang') || (typeof window !== 'undefined' && window._i18n && window._i18n.lang) || 'zh',
   translations: {},    // 当前语言翻译数据
   enTranslations: {},  // 英文翻译数据（构建映射用）
   _loaded: false,

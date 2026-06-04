@@ -5232,8 +5232,8 @@ function initLanguageSwitcher() {
   const langSelect = document.getElementById('language-select');
   if (!langSelect) return;
 
-  // Set current value
-  const currentLang = localStorage.getItem('odysseus-lang') || 'zh';
+  // Set current value — reflect the language actually in effect (browser-detected on first visit)
+  const currentLang = (window.I18N && window.I18N.currentLang) || localStorage.getItem('odysseus-lang') || (window._i18n && window._i18n.lang) || 'zh';
   langSelect.value = currentLang;
 
   // Listen for changes

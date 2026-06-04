@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <title>Odysseus 聊天</title>
+  <title data-i18n="app.title">Odysseus Chat</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 4L16 22L6 22Z' fill='%23e06c75'/%3E%3Cpath d='M16 8L16 22L24 22Z' fill='%23e06c75' opacity='0.6'/%3E%3Cpath d='M4 24Q10 20 16 24Q22 28 28 24' stroke='%23e06c75' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
   <link rel="manifest" href="/static/manifest.json">
   <meta name="theme-color" content="#282c34">
@@ -690,13 +690,13 @@
       </div>
     </div>
     <div class="sidebar-inner">
-      <div class="list-item" id="sidebar-new-chat-btn" title="新聊天">
+      <div class="list-item" id="sidebar-new-chat-btn" data-i18n-title="nav.newChat" title="New Chat">
         <svg class="sidebar-action-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="position:relative;left:-2px;"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        <span class="grow" style="position:relative;left:-3px;">新聊天</span>
+        <span class="grow" style="position:relative;left:-3px;" data-i18n="nav.newChat">New Chat</span>
       </div>
-      <div class="list-item" id="sidebar-search-btn" title="搜索会话 (Ctrl+K)">
+      <div class="list-item" id="sidebar-search-btn" data-i18n-title="nav.searchTitle" title="Search sessions (Ctrl+K)">
         <svg class="sidebar-action-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="10" cy="10" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
-        <span class="grow" style="position:relative;left:-1px;">搜索</span>
+        <span class="grow" style="position:relative;left:-1px;" data-i18n="nav.search">Search</span>
       </div>
       <!-- Assistant sidebar entry removed — its log + settings live inside
            the Tasks modal (Activity + Settings tabs). The backend
@@ -1683,6 +1683,7 @@
               <select id="language-select" style="padding:8px 12px;border-radius:6px;border:1px solid var(--border);background:var(--input-bg);color:var(--fg);font-size:14px;cursor:pointer;">
                 <option value="en">English</option>
                 <option value="zh">简体中文</option>
+                <option value="zh-TW">繁體中文</option>
                 <option value="ja">日本語</option>
                 <option value="ko">한국어</option>
                 <option value="fr">Français</option>
@@ -2305,7 +2306,26 @@
 <!-- i18n: 同步加载翻译，确保页面渲染前完成 -->
 <script nonce="{{CSP_NONCE}}">
 (function() {
-  window._i18n = { lang: localStorage.getItem('odysseus-lang') || 'zh', t: {} };
+  // Language pick: a saved choice in localStorage wins; on first visit fall back to
+  // navigator.languages; if nothing matches a supported locale, default to English.
+  function detectLang() {
+    var saved = localStorage.getItem('odysseus-lang');
+    if (saved) return saved;
+    var supported = ['en', 'zh', 'zh-TW', 'ja', 'ko', 'fr', 'de', 'es'];
+    var navs = navigator.languages || [navigator.language || 'en'];
+    for (var i = 0; i < navs.length; i++) {
+      var low = (navs[i] || '').toLowerCase();
+      if (low.indexOf('zh') === 0) {
+        // Traditional for TW/HK/MO/Hant; other Chinese variants fall back to Simplified.
+        if (/tw|hk|mo|hant/.test(low)) return 'zh-TW';
+        return 'zh';
+      }
+      var primary = low.split('-')[0];
+      if (supported.indexOf(primary) > -1) return primary;
+    }
+    return 'en';
+  }
+  window._i18n = { lang: detectLang(), t: {} };
   var xhr = new XMLHttpRequest();
   xhr.open('GET', '/static/locales/' + window._i18n.lang + '.json?v=' + Date.now(), false);
   xhr.onreadystatechange = function() {
