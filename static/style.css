@@ -158,6 +158,17 @@ html {
 :root.density-spacious .list-item { padding: 8px 12px; }
 :root.density-spacious .sidebar .section { padding: 0; }
 
+/* Sidebar nav + section-title text size on desktop. Mobile keeps its own rules.
+   The .sidebar prefix raises specificity above the base 10px .section-title rule. */
+@media (min-width: 769px) {
+  .sidebar .list-item,
+  .sidebar .list-item .grow,
+  .sidebar .section-header-flex .section-title { font-size: 16px; }
+  /* Footer user bar: name was 9.75px (tiny), avatar 24px — bump for readability. */
+  .sidebar .user-bar-name { font-size: 14px; }
+  .sidebar .user-bar-avatar { width: 28px; height: 28px; font-size: 12px; }
+}
+
 /* ── Background Patterns ── */
 
 :root { --bg-effect-intensity: 1; }
