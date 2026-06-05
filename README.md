@@ -10,6 +10,15 @@
 
 ![Odysseus](docs/odysseus.jpg)
 
+> **繁體中文・日本語 i18n Fork ｜ 中日文在地化版本**
+>
+> 這是 [`pewdiepie-archdaemon/odysseus`](https://github.com/pewdiepie-archdaemon/odysseus) 的 **繁體中文（台灣用語）＋ 日本語** 在地化分支。**開箱即用**：預設分支 `feat/i18n.zh-TW.ja` 已內建中日文介面，clone 下來不必任何設定就是中文／日文。
+> - 繁體中文 UI（台灣用語：搜尋・品質・文件庫・智能體…）
+> - 日本語 UI（420 項目フル翻訳）
+> - 依瀏覽器語系自動切換 繁中／日本語／English
+>
+> 本家のエンジンはそのまま、**言語だけ**を追加。clone してすぐ日本語・繁体字で使えます。 _Out of the box — clone and the UI is already in Traditional Chinese & Japanese._
+
 A self-hosted AI workspace -- meant to be the self-hosted version of the UI experience you get from ChatGPT and Claude. But with more jank and fun. Running on your own hardware, with your own data -- local-first, privacy-first, and no trojan.
 
 ## Features
