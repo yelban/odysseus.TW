@@ -51,7 +51,10 @@
     "disableSkillInject": "設為 0 可停用技能注入。",
     "auditThresholdDesc": "全部審計會發布達到此置信度的通過、必要技能。關閉 = 保留審計結果為草稿，除非手動批准。",
     "minConfidence": "最低置信度",
-    "importFileDesc": "匯入 .txt、.md、.pdf、.csv、.log、.json、.py、.js 或 .html 檔案——AI 會閱讀並建議可批准的候選記憶。"
+    "importFileDesc": "匯入 .txt、.md、.pdf、.csv、.log、.json、.py、.js 或 .html 檔案——AI 會閱讀並建議可批准的候選記憶。",
+    "skillImportDesc": "從 GitHub 或 <a href=\"https://skills.sh\" target=\"_blank\" rel=\"noopener noreferrer\">skills.sh</a> 匯入技能（含 <code>SKILL.md</code> 與選用範本的資料夾）。",
+    "skillImportTitle": "從 URL 匯入技能",
+    "skillCreateManual": "或手動建立技能——名稱、解決什麼問題，以及做法。"
   },
   "chat": {
     "placeholder": "輸入訊息...",
@@ -162,7 +165,7 @@
     "sendFrom": "傳送自",
     "sendTo": "傳送至",
     "ntfyTopic": "ntfy 主題",
-    "warmRemindersDesc": "開啟後，工具模型會為瀏覽器、郵件和 ntfy 提醒撰寫簡短、溫馨的一行提醒，而不是僅使用原始筆記內容。",
+    "warmRemindersDesc": "開啟後，工具模型會為瀏覽器、郵件、ntfy 與 Webhook 提醒撰寫簡短、溫馨的一行提醒，而不是僅使用原始筆記內容。",
     "baseUrlDesc": "用於在傳出的提醒/緊急郵件中構建返回 Odysseus 的可點選連結（例如 https://chat.yourdomain.com）。留空則省略連結。",
     "testReminderDesc": "使用當前設定傳送測試提醒，驗證一切正常。",
     "testReminderBtn": "測試",
@@ -220,7 +223,9 @@
     "autoMemoryLabel": "自動記憶",
     "autoSkillLabel": "自動技能",
     "skillInjection": "技能注入",
-    "auditThreshold": "審計閾值"
+    "auditThreshold": "審計閾值",
+    "integration": "整合",
+    "payload": "酬載"
   },
   "visibility": {
     "sidebar": "側邊欄",
@@ -438,5 +443,11 @@
     "all_sources": "所有來源",
     "random": "隨機",
     "shell_access": "終端機存取"
+  },
+  "plan": {
+    "mode": "計畫模式——唯讀調查，再提出計畫供核准",
+    "proposed": "建議計畫",
+    "approved": "已核准計畫",
+    "approveRun": "核准並執行"
   }
 }

@@ -51,7 +51,10 @@
     "disableSkillInject": "0 に設定するとスキル注入を無効にします。",
     "auditThresholdDesc": "「すべて監査」は、この信頼度以上の合格した必要なスキルを公開します。オフ = 手動で承認しない限り監査結果を下書きのまま保持します。",
     "minConfidence": "最小信頼度",
-    "importFileDesc": ".txt、.md、.pdf、.csv、.log、.json、.py、.js、.html ファイルをインポート — AI が読み取り、承認できる候補メモリーを提案します。"
+    "importFileDesc": ".txt、.md、.pdf、.csv、.log、.json、.py、.js、.html ファイルをインポート — AI が読み取り、承認できる候補メモリーを提案します。",
+    "skillImportDesc": "GitHub または <a href=\"https://skills.sh\" target=\"_blank\" rel=\"noopener noreferrer\">skills.sh</a> からスキルをインポート（<code>SKILL.md</code> と任意のテンプレートを含むフォルダ）。",
+    "skillImportTitle": "URL からスキルをインポート",
+    "skillCreateManual": "または手動でスキルを作成——タイトル、解決する課題、アプローチ。"
   },
   "chat": {
     "placeholder": "メッセージを入力...",
@@ -162,7 +165,7 @@
     "sendFrom": "送信元",
     "sendTo": "送信先",
     "ntfyTopic": "ntfy トピック",
-    "warmRemindersDesc": "オンの場合、ユーティリティモデルがブラウザ、メール、ntfy のリマインダー用に、生のノート内容ではなく短く温かい一行のリマインダーを作成します。",
+    "warmRemindersDesc": "オンの場合、ユーティリティモデルがブラウザ、メール、ntfy、Webhook のリマインダー用に、生のノート内容ではなく短く温かい一行のリマインダーを作成します。",
     "baseUrlDesc": "送信されるリマインダー／緊急メール内に Odysseus へ戻るクリック可能なリンクを作成するために使用します（例: https://chat.yourdomain.com）。空欄の場合はリンクを省略します。",
     "testReminderDesc": "現在の設定でテストリマインダーを発火させ、すべてが機能することを確認します。",
     "testReminderBtn": "テスト",
@@ -220,7 +223,9 @@
     "autoMemoryLabel": "自動メモリー",
     "autoSkillLabel": "自動スキル",
     "skillInjection": "スキル注入",
-    "auditThreshold": "監査しきい値"
+    "auditThreshold": "監査しきい値",
+    "integration": "連携",
+    "payload": "ペイロード"
   },
   "visibility": {
     "sidebar": "サイドバー",
@@ -438,5 +443,11 @@
     "all_sources": "すべてのソース",
     "random": "ランダム",
     "shell_access": "シェルアクセス"
+  },
+  "plan": {
+    "mode": "プランモード——読み取り専用で調査し、承認用のプランを提案",
+    "proposed": "提案されたプラン",
+    "approved": "承認済みプラン",
+    "approveRun": "承認して実行"
   }
 }

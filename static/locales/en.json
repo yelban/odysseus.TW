@@ -51,7 +51,10 @@
     "disableSkillInject": "Set to 0 to disable skill injection.",
     "auditThresholdDesc": "Audit all publishes passing, necessary skills at or above this confidence. Off = keep audit results as drafts unless manually approved.",
     "minConfidence": "Minimum confidence",
-    "importFileDesc": "Import a .txt, .md, .pdf, .csv, .log, .json, .py, .js, or .html file — the AI reads it and suggests candidate memories you can approve."
+    "importFileDesc": "Import a .txt, .md, .pdf, .csv, .log, .json, .py, .js, or .html file — the AI reads it and suggests candidate memories you can approve.",
+    "skillImportDesc": "Import a skill from GitHub or <a href=\"https://skills.sh\" target=\"_blank\" rel=\"noopener noreferrer\">skills.sh</a> (folder with <code>SKILL.md</code> and optional templates).",
+    "skillImportTitle": "Import skill from URL",
+    "skillCreateManual": "Or create a skill by hand — title, what it solves, and an approach."
   },
   "chat": {
     "placeholder": "Type a message...",
@@ -162,7 +165,7 @@
     "sendFrom": "Send from",
     "sendTo": "Send to",
     "ntfyTopic": "ntfy topic",
-    "warmRemindersDesc": "When on, the utility model writes a short, warm one-line reminder for browser, email, AND ntfy reminders instead of just the raw note content.",
+    "warmRemindersDesc": "When on, the utility model writes a short, warm one-line reminder for browser, email, ntfy, AND webhook reminders instead of just the raw note content.",
     "baseUrlDesc": "Used to build clickable links back to Odysseus inside outgoing reminder / urgent-email emails (e.g. https://chat.yourdomain.com). Leave blank to omit links.",
     "testReminderDesc": "Fire a test reminder using your current settings to verify everything works.",
     "testReminderBtn": "Test",
@@ -220,7 +223,9 @@
     "autoMemoryLabel": "Auto Memory",
     "autoSkillLabel": "Auto Skill",
     "skillInjection": "Skill Injection",
-    "auditThreshold": "Audit Threshold"
+    "auditThreshold": "Audit Threshold",
+    "integration": "Integration",
+    "payload": "Payload"
   },
   "visibility": {
     "sidebar": "Sidebar",
@@ -438,5 +443,11 @@
     "all_sources": "All sources",
     "random": "Random",
     "shell_access": "Shell Access"
+  },
+  "plan": {
+    "mode": "Plan mode — investigate read-only, then propose a plan to approve",
+    "proposed": "Proposed plan",
+    "approved": "Approved plan",
+    "approveRun": "Approve & Run"
   }
 }
