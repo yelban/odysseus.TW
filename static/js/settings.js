@@ -508,8 +508,9 @@ async function initUtilityModel() {
   var msg = el('set-utilityChatMsg');
   var _endpoints = [];
   var fallbackWidget = null;
-  if (epSel && epSel.options[0]) epSel.options[0].textContent = 'Same as chat';
-  if (modelSel && modelSel.options[0]) modelSel.options[0].textContent = 'Same as chat';
+  var _sameAsChat = (window.I18N && window.I18N.t) ? window.I18N.t('settings.sameAsChat', 'Same as chat') : 'Same as chat';
+  if (epSel && epSel.options[0]) { epSel.options[0].setAttribute('data-i18n', 'settings.sameAsChat'); epSel.options[0].textContent = _sameAsChat; }
+  if (modelSel && modelSel.options[0]) { modelSel.options[0].setAttribute('data-i18n', 'settings.sameAsChat'); modelSel.options[0].textContent = _sameAsChat; }
 
   try {
     _endpoints = await _fetchModelEndpoints();
